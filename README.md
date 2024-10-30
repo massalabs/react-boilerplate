@@ -1,12 +1,12 @@
 # Massa Boilerplate: React + TypeScript + Vite
 
-Welcome to the Massa Boilerplate! This project serves as a starting point for building applications with the Massa framework.
+Welcome to the frontend Massa Boilerplate! This project serves as a starting point for building decentralized applications with Massa.
 
 ## Getting Started
 
 1. **Clone the repository**:
   ```sh
-  git clone https://github.com/yourusername/massa-boilerplate.git
+  git clone https://github.com/massalabs/react-boilerplate.git
   cd massa-boilerplate
   ```
 
