@@ -18,9 +18,9 @@ function App() {
 
   const [greeting, setGreeting] = useState<string | null>(null);
 
-    /**
-   * Initialize the web3 client
-   */
+  /**
+ * Initialize the web3 client
+ */
   const client = JsonRPCClient.buildnet()
 
   /**
@@ -36,18 +36,18 @@ function App() {
   async function getGreeting() {
     if (client) {
       const dataStoreVal = await client.getDatastoreEntry(GREETING_KEY, sc_addr, false)
-      const greetingDecoded = bytesToStr(dataStoreVal);
+      const greetingDecoded = dataStoreVal ? bytesToStr(dataStoreVal) : null;
       setGreeting(greetingDecoded);
     }
   }
 
   return (
     <>
-    <div>
-     <MassaLogo className="logo" size={100}/>   
-     <h2>Greeting message:</h2>
-     <h1>{greeting}</h1>
-     </div>
+      <div>
+        <MassaLogo className="logo" size={100} />
+        <h2>Greeting message:</h2>
+        <h1>{greeting}</h1>
+      </div>
     </>
   );
 }
