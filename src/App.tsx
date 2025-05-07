@@ -2,6 +2,9 @@ import { bytesToStr, JsonRPCClient } from "@massalabs/massa-web3";
 import { useEffect, useState } from "react";
 import { MassaLogo } from "@massalabs/react-ui-kit";
 import './App.css';
+import '@massalabs/react-ui-kit/src/global.css';
+import { ConnectButton } from "./components/wallet/connect-wallet-popup";
+
 
 const sc_addr = "AS121byc9dBwjbeREk4rzUZisFyfMkdZ1Uhtcnm6n6s5hnCX6fsHc"; // TODO Update with your deployed contract address
 
@@ -44,9 +47,16 @@ function App() {
   return (
     <>
       <div>
-        <MassaLogo className="logo" size={100} />
-        <h2>Greeting message:</h2>
-        <h1>{greeting}</h1>
+        <div className="logo-container">
+          <MassaLogo className="logo" size={100} />
+        </div>
+        <div className="greeting-container">
+          <h2 className="greeting-label">Greeting message:</h2>
+          <h1 className="greeting-message">{greeting || 'Loading...'}</h1>
+        </div>
+      </div>
+      <div className="wallet-container">
+          <ConnectButton />
       </div>
     </>
   );
